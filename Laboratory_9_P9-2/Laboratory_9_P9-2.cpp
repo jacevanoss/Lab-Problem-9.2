@@ -43,6 +43,13 @@ int main() {
 		cout << "The data does not have adjacent duplicates." << endl;
 	}
 
+	if (hasDuplicates(values, arraySize)) {
+		cout << "The data has duplicates." << endl;
+	}
+	else {
+		cout << "The data has no duplicates." << endl;
+	}
+
 
 	return 0;
 }
@@ -64,12 +71,19 @@ bool isSortedDecreasing(int array[], int size) {
 }
 bool hasAdjecentDuplicates(int array[], int size) {
 	for (int i = 1; i < size; i++) {
-		if (array[i] == array[i - 1]) {
+		if (array[i] == array[i - 1]) { 
 			return true;
 		}
 	}
 	return false;
 }
 bool hasDuplicates(int array[], int size) {
-
+	for (int i = 0; i < size; i++) {
+		for (int j = i + 1; j < size; j++) {
+				if (array[i] == array[j]) {
+					return true;
+				}
+		}
+	}
+	return false;
 }
