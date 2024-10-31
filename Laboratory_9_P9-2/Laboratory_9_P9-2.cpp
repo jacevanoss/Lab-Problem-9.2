@@ -56,23 +56,23 @@ int main() {
 bool isSortedIncreasing(int array[], int size) {
 	for (int i = 1; i < size; i++) {
 		if (array[i] < array[i - 1]) {
-			return false;
+			return false; // found number smaller than previous
 		}
 	}
-	return true;
+	return true; // otherwise in increasing order
 }
 bool isSortedDecreasing(int array[], int size) {
 	for (int i = 1; i < size; i++) {
 		if (array[i] > array[i - 1]) {
-			return false;
+			return false; // element larger than other
 		}
 	}
-	return true;
+	return true; // otherwise decreasing
 }
 bool hasAdjecentDuplicates(int array[], int size) {
 	for (int i = 1; i < size; i++) {
 		if (array[i] == array[i - 1]) { 
-			return true;
+			return true; // found adjacent value
 		}
 	}
 	return false;
