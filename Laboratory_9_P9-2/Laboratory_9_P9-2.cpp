@@ -11,6 +11,8 @@ using namespace std;
 
 bool isSortedIncreasing(int array[], int size);
 bool isSortedDecreasing(int array[], int size);
+bool hasAdjecentDuplicates(int array[], int size);
+bool hasDuplicates(int array[], int size);
 
 int main() {
 
@@ -34,6 +36,12 @@ int main() {
 		cout << "The data are not decreasing." << endl;
 	}
 
+	if (hasAdjecentDuplicates(values, arraySize)) {
+		cout << "The data has adjacent duplicates." << endl;
+	}
+	else {
+		cout << "The data does not have adjacent duplicates." << endl;
+	}
 
 
 	return 0;
@@ -43,18 +51,25 @@ bool isSortedIncreasing(int array[], int size) {
 		if (array[i] < array[i - 1]) {
 			return false;
 		}
-		else {
-			return true;
-		}
 	}
+	return true;
 }
 bool isSortedDecreasing(int array[], int size) {
 	for (int i = 1; i < size; i++) {
 		if (array[i] > array[i - 1]) {
 			return false;
 		}
-		else {
+	}
+	return true;
+}
+bool hasAdjecentDuplicates(int array[], int size) {
+	for (int i = 1; i < size; i++) {
+		if (array[i] == array[i - 1]) {
 			return true;
 		}
 	}
+	return false;
+}
+bool hasDuplicates(int array[], int size) {
+
 }
